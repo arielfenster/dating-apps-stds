@@ -1,0 +1,16 @@
+{
+  "name": "dating-apps-stds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+		"prestart": "tsc",
+    "start": "node dist/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
