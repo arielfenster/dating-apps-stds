@@ -1,6 +1,6 @@
-import { Agent } from './agent';
-import { EpidemiologicalState, Gender } from './types';
-import { generateProbability, generateInteger } from './utils/random';
+import { Agent } from '.';
+import { EpidemiologicalState, Gender } from '../types';
+import { generateInteger, generateProbability } from '../utils/random';
 
 export class AgentGenerator {
 	generate() {

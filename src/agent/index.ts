@@ -1,4 +1,4 @@
-import { EpidemiologicalState, Gender } from './types';
+import { EpidemiologicalState, Gender } from '../types';
 
 type AgentData = {
 	state: EpidemiologicalState;

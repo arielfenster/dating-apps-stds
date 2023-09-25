@@ -1,5 +1,5 @@
 import { Agent } from './agent';
-import { AgentGenerator } from './agent-generator';
+import { AgentGenerator } from './agent/agent-generator';
 
 export class Population {
 	constructor(private numAgents: number) {}
