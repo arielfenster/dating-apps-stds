@@ -2,5 +2,5 @@ import { Edge } from './edge';
 import { Node } from './node';
 
 export class Graph {
-	constructor(private nodes: Node[], private edges: Edge[]) {}
+	constructor(public nodes: Node[], public edges: Edge[]) {}
 }

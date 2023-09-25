@@ -1,7 +1,5 @@
-import { Edge } from './graph/edge';
-import { Node } from './graph/node';
-import { Population } from './population';
+import { inspect } from 'util';
+import { FullyConnectedGraphGenerator } from './graph/generators/fully-connected-graph-generator';
 
-const population = new Population(3).generate();
-
-console.log(new Edge(new Node(11), new Node(33), 22));
+const graph = new FullyConnectedGraphGenerator(4);
+console.log(inspect(graph.generate(), false, Infinity, true));
