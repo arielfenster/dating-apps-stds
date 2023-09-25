@@ -3,7 +3,7 @@ export class Timer {
 
 	constructor(private _maxTime: number) {}
 
-	didReachMaxTime() {
+	hasTimeRemaining() {
 		return this._currentTime < this._maxTime;
 	}
 

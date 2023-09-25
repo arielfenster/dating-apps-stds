@@ -16,5 +16,5 @@ type AgentData = {
 };
 
 export class Agent {
-	constructor(private data: AgentData) {}
+	constructor(public data: AgentData) {}
 }

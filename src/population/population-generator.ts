@@ -1,7 +1,8 @@
-import { Agent } from './agent';
-import { AgentGenerator } from './agent/agent-generator';
+import { Population } from '.';
+import { Agent } from '../agent';
+import { AgentGenerator } from '../agent/agent-generator';
 
-export class Population {
+export class PopulationGenerator {
 	constructor(private numAgents: number) {}
 
 	generate() {
@@ -12,6 +13,6 @@ export class Population {
 			agents.push(agentGenerator.generate());
 		}
 
-		return agents;
+		return new Population(agents);
 	}
 }
