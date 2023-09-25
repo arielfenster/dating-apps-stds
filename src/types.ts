@@ -1,11 +1,11 @@
 export enum EpidemiologicalState {
-	SUSCEPTIBLE,
-	INFECTED,
-	EXPOSED,
-	DEAD,
+	SUSCEPTIBLE = 'SUSCEPTIBLE',
+	INFECTED = 'INFECTED',
+	EXPOSED = 'EXPOSED',
+	DEAD = 'DEAD',
 }
 
 export enum Gender {
-	MALE,
-	FEMALE,
+	MALE = 'MALE',
+	FEMALE = 'FEMALE',
 }

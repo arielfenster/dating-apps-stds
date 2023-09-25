@@ -6,11 +6,11 @@ type AgentData = {
 	gender: Gender;
 	populationAttractiveness: number; // mu
 	seekingSexualPartner: boolean; // theta
-	timeSeekingSexualPartner: number; // delta1
-	timeNotSeekingSexualPartner: number; // delta2
+	timeSeekingSexualPartner: number; // gamma1
+	timeNotSeekingSexualPartner: number; // gamma2
 	useDatingAppProbability: number; // d
-	useDatingAppProbabilityIncrease: number; // gammaS
-	useDatingAppProbabilityDecrease: number; // gammaN
+	useDatingAppProbabilityIncrease: number; // deltaS
+	useDatingAppProbabilityDecrease: number; // deltaN
 	omega12: number;
 	omega21: number;
 };
