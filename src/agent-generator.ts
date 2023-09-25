@@ -5,7 +5,7 @@ import { generateProbability, generateInteger } from './utils/random';
 export class AgentGenerator {
 	generate() {
 		const agent = new Agent({
-			state: EpidemiologicalState.SUSCEPTIBLE,
+			state: this.generateState(),
 			age: this.generateAge(),
 			gender: this.generateGender(),
 			populationAttractiveness: generateProbability(),
@@ -20,6 +20,18 @@ export class AgentGenerator {
 		});
 
 		return agent;
+	}
+
+	private generateState() {
+		const states: EpidemiologicalState[] = [
+			EpidemiologicalState.SUSCEPTIBLE,
+			EpidemiologicalState.EXPOSED,
+			EpidemiologicalState.INFECTED,
+			EpidemiologicalState.DEAD,
+		];
+
+		const index = generateInteger(0, states.length);
+		return states[index];
 	}
 
 	private generateAge() {
