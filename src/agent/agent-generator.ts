@@ -1,10 +1,12 @@
-import { Agent } from '.';
+import { Agent, AgentData } from '.';
+import { AGENT_MAX_AGE, AGENT_MIN_AGE, MAX_DURATION_TIME, MIN_DURATION_TIME } from '../constants';
+import { Timer } from '../timer';
 import { EpidemiologicalState, Gender } from '../types';
 import { generateInteger, generateProbability } from '../utils/random';
 
 export class AgentGenerator {
-	generate() {
-		const agent = new Agent({
+	generate(graphSize: number) {
+		const data: AgentData = {
 			state: this.generateState(),
 			age: this.generateAge(),
 			gender: this.generateGender(),
@@ -17,9 +19,9 @@ export class AgentGenerator {
 			useDatingAppProbabilityDecrease: generateProbability(),
 			omega12: generateProbability(),
 			omega21: generateProbability(),
-		});
+		};
 
-		return agent;
+		return new Agent(data, this.generateLocation(graphSize), new Timer());
 	}
 
 	private generateState() {
@@ -35,7 +37,7 @@ export class AgentGenerator {
 	}
 
 	private generateAge() {
-		return generateInteger(18, 50);
+		return generateInteger(AGENT_MIN_AGE, AGENT_MAX_AGE);
 	}
 
 	private generateGender() {
@@ -47,6 +49,10 @@ export class AgentGenerator {
 	 * @returns number
 	 */
 	private generateDuration() {
-		return generateInteger(10, 60);
+		return generateInteger(MIN_DURATION_TIME, MAX_DURATION_TIME);
+	}
+
+	private generateLocation(graphSize: number) {
+		return generateInteger(0, graphSize - 1);
 	}
 }

@@ -1,3 +1,4 @@
+import { buildArrayOfSize } from '../../utils/misc';
 import { generateInteger } from '../../utils/random';
 import { Edge } from './../edge';
 import { Node } from './../node';
@@ -5,7 +6,7 @@ import { GraphGenerator } from './graph-generator.interface';
 
 export class RandomGraphGenerator extends GraphGenerator {
 	protected generateNodes() {
-		const ids = Array.from(Array(this.numNodes)).map((_, idx) => idx);
+		const ids = buildArrayOfSize(this.numNodes).map((_, idx) => idx);
 
 		return ids.map((id) => new Node(id));
 	}

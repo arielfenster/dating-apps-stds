@@ -3,4 +3,8 @@ import { Node } from './node';
 
 export class Graph {
 	constructor(public nodes: Node[], public edges: Edge[]) {}
+
+	getSize() {
+		return this.nodes.length;
+	}
 }
